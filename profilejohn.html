@@ -195,6 +195,8 @@ body {
   max-width: 500px;
   border-radius: 4px;
   background: #000;
+  /* Make poster fit properly */
+  object-fit: cover;
 }
 
 a {
@@ -208,13 +210,13 @@ a {
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <button onclick="window.location.href='../Nicole/index.html'">←</button>
+    <button onclick="window.location.href='index.html'">←</button>
     <div class="logo">NETFLIX</div>
     <button onclick="alert('Options')">⋯</button>
   </div>
 
   <div class="profile-header">
-    <img src="images/profilejohn.jpg" alt="John Marie Delfin" class="profile-pic">
+    <img src="images/profilejohn1.jpg" alt="John Marie Delfin" class="profile-pic">
     <div class="username">John Marie Delfin</div>
     <div class="handle">@johnmarie_bsoa</div>
   </div>
@@ -238,7 +240,7 @@ a {
   <!-- Buttons -->
   <div class="btn-row">
     <button class="btn btn-primary" onclick="switchTab(1, this)">View Portfolio</button>
-    <button class="btn btn-secondary" onclick="window.location.href='../Nicole/index.html'">Log Out</button>
+    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Log Out</button>
   </div>
 
   <!-- Bio -->
@@ -262,19 +264,21 @@ a {
     <h2>Welcome to My Portfolio</h2>
     <p>Select a tab above or watch my featured video below.</p>
 
+    <!-- Featured Video WITH POSTER -->
     <div class="video-block">
       <h3>🎥 Featured Video</h3>
-      <video controls poster="images/videoposterjohn.jpg">
-        <source src="videos/myvideojohn.mp4" type="video/mp4">
-        Your browser does not support the video format.
+      <video controls poster="images/videoposter.jpg">
+        <source src="video/myvideo1.mp4" type="video/mp4">
+        Your browser does not support this video format.
       </video>
     </div>
 
+    <!-- Additional Video WITH POSTER -->
     <div class="video-block">
       <h3>🎥 Additional Video</h3>
-      <video controls poster="images/videoposterjohn2.jpg">
-        <source src="videos/myvideojohn2.mp4" type="video/mp4">
-        Your browser does not support the video format.
+      <video controls poster="images/videoposter1.jpg">
+        <source src="video/myvideo2.mp4" type="video/mp4">
+        Your browser does not support this video format.
       </video>
     </div>
 
@@ -308,7 +312,7 @@ a {
   <div class="content" id="tab5">
     <h2>Office Administration</h2>
     <p style="color:#b3b3b3; margin:20px 0;">Learn about my course and career path.</p>
-    <a href="officeadminjohn.html" class="link-btn">Open Office Admin</a>
+    <a href="office-adminjohn.html" class="link-btn">Open Office Admin</a>
   </div>
 
 </div>
