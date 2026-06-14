@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Portfolio - Nicole L. Duero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.profile {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 25px 20px;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.top-bar button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #e50914;
+  letter-spacing: 1px;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #333;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.username {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.handle {
+  color: #b3b3b3;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* Stats Row */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+.stat {
+  text-align: center;
+}
+.stat-num {
+  font-size: 26px;
+  font-weight: bold;
+}
+.stat-label {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.btn {
+  padding: 12px 35px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #e50914;
+  color: white;
+}
+.btn-secondary {
+  background: #333;
+  color: white;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Bio */
+.bio {
+  text-align: center;
+  font-size: 16px;
+  color: #b3b3b3;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #333;
+  margin-bottom: 25px;
+  overflow-x: auto;
+}
+.tab {
+  padding: 12px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.tab.active {
+  color: #fff;
+  border-bottom-color: #e50914;
+}
+
+/* Content */
+.content {
+  display: none;
+  padding: 20px 10px;
+}
+.content.active {
+  display: block;
+}
+.content h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.content p {
+  font-size: 18px;
+  color: #b3b3b3;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Link Button */
+.link-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px;
+  background: #e50914;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+.link-btn:hover {
+  background: #f40612;
+}
+
+/* Video Section */
+.video-block {
+  background: #111;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 30px 0;
+  text-align: center;
+}
+.video-block h3 {
+  color: #e50914;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.video-block video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 4px;
+  background: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>
+</head>
+<body>
+<div class="profile">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <button onclick="window.location.href='index.html'">←</button>
+    <div class="logo">NETFLIX</div>
+    <button onclick="alert('Options')">⋯</button>
+  </div>
+
+  <div class="profile-header">
+    <img src="images/profilenicole.jpg" alt="Nicole L. Duero" class="profile-pic">
+    <div class="username">NICOLE L. DUERO</div>
+    <div class="handle">@nicoled_bsoa</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">2nd</div>
+      <div class="stat-label">Year</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">BSOA</div>
+      <div class="stat-label">Course</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">UA</div>
+      <div class="stat-label">University</div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="switchTab(1, this)">View Portfolio</button>
+    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Log Out</button>
+  </div>
+
+  <!-- Bio -->
+  <div class="bio">
+    Striving for excellence, growing with purpose ✨<br>
+    Bachelor of Science in Office Administration | Dedicated & Organized
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(0, this)">Home</div>
+    <div class="tab" onclick="switchTab(1, this)">About Me</div>
+    <div class="tab" onclick="switchTab(2, this)">Education</div>
+    <div class="tab" onclick="switchTab(3, this)">Resume</div>
+    <div class="tab" onclick="switchTab(4, this)">Gallery</div>
+    <div class="tab" onclick="switchTab(5, this)">Office Admin</div>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="content active" id="tab0">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Select a tab above or watch my featured video below.</p>
+
+    <div class="video-block">
+      <h3>🎥 Featured Video</h3>
+      <video controls poster="images/videoposternicole.jpg">
+        <source src="videos/myvideonicole.mp4" type="video/mp4">
+        Your browser does not support the video format.
+      </video>
+    </div>
+  </div>
+
+  <div class="content" id="tab1">
+    <h2>About Me</h2>
+    <p>I am Nicole L. Duero, a 2nd-year BSOA student passionate about office management, communication, and organization. I aim to develop professional skills to become a reliable and efficient administrator.</p>
+    <a href="aboutnicole.html" class="link-btn">Open Full Profile</a>
+  </div>
+
+  <div class="content" id="tab2">
+    <h2>Educational Background</h2>
+    <p>University of Antique<br>Bachelor of Science in Office Administration<br>2nd Year Level | Current</p>
+    <a href="educationnicole.html" class="link-btn">View Details</a>
+  </div>
+
+  <div class="content" id="tab3">
+    <h2>Resume / CV</h2>
+    <p>Summary of my academic background, skills, and qualifications.</p>
+    <a href="resumenicole.html" class="link-btn">View Full Resume</a>
+  </div>
+
+  <div class="content" id="tab4">
+    <h2>Photo Gallery</h2>
+    <p>Photos, certificates, and school activities.</p>
+    <a href="gallerynicole.html" class="link-btn">Open Photo Gallery</a>
+  </div>
+
+  <div class="content" id="tab5">
+    <h2>Office Administration</h2>
+    <p>Document management, communication, computer skills, and office procedures.</p>
+    <div class="video-block">
+      <h3>Introduction Video</h3>
+      <video controls poster="images/intro Nicole.jpg">
+        <source src="videos/intronicole.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+    <a href="officeadminnicole.html" class="link-btn">Learn More</a>
+  </div>
+
+</div>
+
+<script>
+function switchTab(index, element) {
+  document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+  element.classList.add('active');
+
+  document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+  document.getElementById('tab' + index).classList.add('active');
+}
+</script>
+
+</body>
+</html>

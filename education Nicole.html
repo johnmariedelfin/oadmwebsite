@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & Contact - Nicole L. Duero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #000; color: #fff; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        /* Navigation Menu */
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        nav a:hover, nav a.active {
+            background: #e50914;
+            color: #fff;
+        }
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            color: #e50914;
+            margin-bottom: 30px;
+        }
+
+        /* Education Card Design */
+        .edu-card {
+            background: #ffffff;
+            color: #222;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 5px solid #e50914;
+        }
+        .edu-header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .edu-header h2 {
+            color: #2c3e50;
+            text-align: left;
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.4rem;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        ul {
+            line-height: 1.8;
+            color: #444;
+            padding-left: 25px;
+        }
+        .award {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: #ffffff;
+            color: #222;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            padding: 2rem;
+            border-left: 5px solid #3498db;
+        }
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        button:hover {
+            background-color: #f40612;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Profile -->
+        <a href="profilenicole.html" class="back-btn">← Back to Profile</a>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home / Login</a></li>
+                <li><a href="aboutnicole.html">About Me</a></li>
+                <li><a href="educationnicole.html" class="active">Education & Contact</a></li>
+                <li><a href="resumenicole.html">Resume</a></li>
+                <li><a href="office-adminnicole.html">Office Administration</a></li>
+                <li><a href="gallerynicole.html">Photo Gallery</a></li>
+            </ul>
+        </nav>
+
+        <h1>🎓 Educational Background</h1>
+
+        <!-- Nicole L. Duero -->
+        <div class="edu-card">
+            <div class="edu-header">
+                <h2>NICOLE L. DUERO</h2>
+                <p style="color: #555; margin-top: 5px;">
+                    📍 La Paz, Hamtic, Antique &nbsp; | &nbsp; 📞 0915-087-4750 &nbsp; | &nbsp; ✉️ nicolelduero@gmail.com
+                </p>
+            </div>
+
+            <h3 class="section-title">📚 Education History</h3>
+            <ul>
+                <li><strong>College:</strong> University of Antique <br> Bachelor of Science in Office Administration | 2023 – Present</li>
+                <li><strong>Senior High School:</strong> Gov. Evelio B. Javier Memorial National High School <br> Strand: Humanities and Social Sciences (HUMSS) | 2021 – 2023 <br> <span class="award">• Graduated with Honors</span></li>
+                <li><strong>Junior High School:</strong> Gov. Evelio B. Javier Memorial National High School | 2017 – 2021</li>
+                <li><strong>Elementary School:</strong> La Paz Elementary School | 2011 – 2017</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <h1>📩 Send a Message</h1>
+        <div class="contact-card">
+            <form>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Nicole L. Duero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #000; color: #fff; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        nav a:hover, nav a.active {
+            background: #e50914;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e50914;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+        .gallery-item img {
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border: 2px solid #2c2c2c;
+        }
+        .caption {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="profilenicole.html" class="back-btn">← Back to Profile</a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home / Login</a></li>
+                <li><a href="aboutnicole.html">About Me</a></li>
+                <li><a href="educationnicole.html">Education & Contact</a></li>
+                <li><a href="resumenicole.html">Resume</a></li>
+                <li><a href="office-adminnicole.html">Office Administration</a></li>
+                <li><a href="gallerynicole.html" class="active">Photo Gallery</a></li>
+            </ul>
+        </nav>
+
+        <h1>📸 Photo Gallery</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/profilenicole.jpg" alt="Nicole L. Duero">
+                <p class="caption">Nicole L. Duero</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto2.jpg" alt="BSOA Student Profile">
+                <p class="caption">BSOA Student Profile</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto1.jpg" alt="PE Class Activity">
+                <p class="caption">PE Class Activity</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto3.jpg" alt="Seminar & Training">
+                <p class="caption">Seminar & Training</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto6.jpg" alt="University Campus">
+                <p class="caption">University Campus</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto4.jpg" alt="Classroom & Group Work">
+                <p class="caption">Classroom & Group Work</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nicolephoto7.jpg" alt="Group Photos">
+                <p class="caption">Group Photos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

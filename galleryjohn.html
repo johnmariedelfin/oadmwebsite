@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - John Marie Delfin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #000; color: #fff; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        nav a:hover, nav a.active {
+            background: #e50914;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e50914;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+        .gallery-item img {
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border: 2px solid #2c2c2c;
+        }
+        .caption {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="profilejohn.html" class="back-btn">← Back to Profile</a>
+
+        <nav>
+            <ul>
+                <li><a href="../Nicole/index.html">Home / Login</a></li>
+                <li><a href="aboutjohn.html">About Me</a></li>
+                <li><a href="educationjohn.html">Education & Contact</a></li>
+                <li><a href="resumejohn.html">Resume</a></li>
+                <li><a href="office-adminjohn.html">Office Administration</a></li>
+                <li><a href="galleryjohn.html" class="active">Photo Gallery</a></li>
+            </ul>
+        </nav>
+
+        <h1>📸 Photo Gallery</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/profilejohn1.jpg" alt="John Marie Delfin">
+                <p class="caption">John Marie Delfin</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/johnphoto2.jpg" alt="Group Photo in PE">
+                <p class="caption">Group Photo in PE</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/johnphoto3.jpg" alt="Seminar Certification">
+                <p class="caption">Seminar Certification</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/johnphoto4.jpg" alt="University of Antique Campus">
+                <p class="caption">University of Antique Campus</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/johnphoto5.jpg" alt="Class Activity">
+                <p class="caption">Class Activity</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/johnphoto6.jpg" alt="School Library">
+                <p class="caption">School Library</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

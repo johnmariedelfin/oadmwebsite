@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Nicole L. Duero</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #000; color: #fff; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        /* Navigation Menu */
+        nav {
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        nav a:hover, nav a.active {
+            background: #e50914;
+            color: #fff;
+        }
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            color: #e50914;
+            margin-bottom: 30px;
+        }
+
+        /* Resume Card Design */
+        .resume-card {
+            background: #ffffff;
+            color: #222;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 5px solid #e50914;
+        }
+        .resume-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #e50914;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .header-info h2 {
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+            font-size: 1.8rem;
+        }
+        .contact-info {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.4rem;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        ul {
+            line-height: 1.8;
+            color: #444;
+            padding-left: 25px;
+        }
+        .award {
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Profile -->
+        <a href="profilenicole.html" class="back-btn">← Back to Profile</a>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home / Login</a></li>
+                <li><a href="aboutnicole.html">About Me</a></li>
+                <li><a href="educationnicole.html">Education & Contact</a></li>
+                <li><a href="resumenicole.html" class="active">Resume</a></li>
+                <li><a href="officeadminnicole.html">Office Administration</a></li>
+                <li><a href="gallerynicole.html">Photo Gallery</a></li>
+            </ul>
+        </nav>
+
+        <h1>📄 Curriculum Vitae / Resume</h1>
+
+        <!-- Nicole L. Duero -->
+        <div class="resume-card">
+            <div class="resume-header">
+                <img src="images/profilenicole.jpg" alt="Nicole L. Duero" class="profile-photo">
+                
+                <div class="header-info">
+                    <h2>NICOLE L. DUERO</h2>
+                    <p class="contact-info">
+                        📍 La Paz, Hamtic, Antique &nbsp; | &nbsp; 📞 0915-087-4750 &nbsp; | &nbsp; ✉️ nicolelduero@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="section-title">🎯 Career Objective</h3>
+            <p>Responsible and motivated 2nd-year Bachelor of Science in Office Administration student. Committed to developing strong organizational, communication, and technical skills. Seeking opportunities to apply classroom learning in real-world settings and grow as a future office professional.</p>
+
+            <h3 class="section-title">🎓 Educational Background</h3>
+            <ul>
+                <li><strong>College:</strong> University of Antique <br> Bachelor of Science in Office Administration | 2023 – Present</li>
+                <li><strong>Senior High School:</strong> Gov. Evelio B. Javier Memorial National High School <br> Strand: Humanities and Social Sciences (HUMSS) | 2021 – 2023 <br> <span class="award">• Graduated with Honors</span></li>
+                <li><strong>Junior High School:</strong> Gov. Evelio B. Javier Memorial National High School | 2017 – 2021</li>
+                <li><strong>Elementary:</strong> La Paz Elementary School | 2011 – 2017</li>
+            </ul>
+
+            <h3 class="section-title">💻 Skills & Competencies</h3>
+            <ul>
+                <li>Proficient in Microsoft Office Suite (Word, Excel, PowerPoint) and Google Workspace</li>
+                <li>Skilled in document preparation, filing, and records management</li>
+                <li>Effective written and oral communication in English and Filipino</li>
+                <li>Fast learner, adaptable, and detail-oriented</li>
+                <li>Strong time management and ability to work under pressure</li>
+                <li>Good interpersonal and teamwork skills</li>
+                <li>Knowledge of basic office procedures and business correspondence</li>
+                <li>High level of integrity and confidentiality</li>
+            </ul>
+
+            <h3 class="section-title">📜 Trainings & Certifications</h3>
+            <ul>
+                <li><strong>Office Procedures & Documentation Seminar</strong> – August 2025 | Certificate of Participation</li>
+                <li><strong>TESDA NC II Preparation</strong>
+                    <ul>
+                        <li>Effective Communication in the Workplace</li>
+                        <li>Processing Office Documents</li>
+                        <li>Basic Bookkeeping Principles</li>
+                    </ul>
+                </li>
+                <li>Student Leadership and Development Training</li>
+                <li>Seminar on Business Ethics and Professionalism</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
