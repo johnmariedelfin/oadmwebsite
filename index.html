@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Sign In</title>
+    <title>Netflix - Sign Up / Log In</title>
     <style>
         * {
             margin: 0;
@@ -13,17 +13,12 @@
         }
 
         body {
-            /* Removed the broken external link, used solid black + gradient overlay instead */
             background: #000;
-            position: relative;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            position: relative;
+            padding: 40px 20px;
         }
 
-        /* Dark gradient overlay like Netflix */
         body::before {
             content: "";
             position: absolute;
@@ -31,49 +26,95 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
-            z-index: 1;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+            z-index: 0;
         }
 
-        /* Official Netflix logo style */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 420px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Help Button */
+        .help {
+            text-align: right;
+            color: #b3b3b3;
+            font-size: 16px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        /* Netflix Logo */
         .logo {
-            position: absolute;
-            top: 25px;
-            left: 30px;
             color: #e50914;
-            font-size: 2.3rem;
+            font-size: 42px;
             font-weight: 900;
             letter-spacing: 1px;
-            z-index: 2;
-            text-decoration: none;
+            margin-bottom: 40px;
         }
 
-        .login-box {
-            position: relative;
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 60px 68px 40px;
-            border-radius: 4px;
-            width: 100%;
-            max-width: 450px;
+        /* Tabs: Sign Up / Log In */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
         }
 
-        .login-box h1 {
+        .tab {
+            flex: 1;
+            padding: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .tab.active {
             color: #fff;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 28px;
+            border-bottom: 3px solid #e50914;
+        }
+
+        /* Form Box */
+        .form {
+            display: none;
+            background: rgba(0,0,0,0.8);
+            padding: 35px 25px;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form h1 {
+            color: #fff;
+            font-size: 26px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #b3b3b3;
+            font-size: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.5;
         }
 
         input {
             width: 100%;
-            padding: 16px 20px;
+            padding: 14px 16px;
             margin-bottom: 16px;
             border: none;
             border-radius: 4px;
             background: #333;
             color: #fff;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         input:focus {
@@ -86,87 +127,130 @@
             color: #b3b3b3;
         }
 
-        button {
+        .btn {
             width: 100%;
             padding: 14px;
-            margin: 24px 0 12px;
-            background: #e50914;
-            color: #fff;
+            margin: 10px 0;
             border: none;
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        button:hover {
+        .btn-primary {
+            background: #e50914;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
             background: #f40612;
         }
 
-        .help-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #b3b3b3;
+        .btn-secondary {
+            background: #333;
+            color: #fff;
         }
 
-        .help-row a {
-            color: #b3b3b3;
-            text-decoration: none;
-        }
-
-        .help-row a:hover {
-            text-decoration: underline;
+        .btn-secondary:hover {
+            background: #444;
         }
 
         #error {
             color: #e87c03;
-            margin-top: 15px;
+            margin-top: 12px;
             display: none;
-            font-size: 0.95rem;
-            padding: 8px 0;
+            font-size: 14px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
+<div class="container">
+    <!-- Help Link -->
+    <div class="help" onclick="showAlert('Help & Support')">?</div>
+
     <!-- Netflix Logo -->
     <div class="logo">NETFLIX</div>
 
-    <div class="login-box">
-        <h1>Sign In</h1>
-        <input type="text" id="username" placeholder="Email or phone number">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Sign In</button>
-        <div class="help-row">
-            <label><input type="checkbox"> Remember me</label>
-            <a href="#">Need help?</a>
-        </div>
-        <div id="error">❌ Incorrect username or password. Please try again.</div>
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('signup', this)">Sign Up</div>
+        <div class="tab" onclick="switchTab('login', this)">Log In</div>
     </div>
 
-    <script>
-        function login() {
-            const user = document.getElementById("username").value.trim();
-            const pass = document.getElementById("password").value;
-            const errorBox = document.getElementById("error");
+    <!-- Sign Up Form -->
+    <div class="form active" id="signup">
+        <h1>Sign up for Netflix</h1>
+        <p class="subtitle">Enjoy unlimited movies, TV shows, and more.</p>
 
-            // ✅ Your working login details
-            if (user === "john" && pass === "1234") {
-                alert("✅ Signing in...");
-                window.location.href = "profilejohn.html";
-            }
-            else if (user === "nicole" && pass === "1234") {
-                alert("✅ Signing in...");
-                window.location.href = "profilenicole.html";
-            }
-            else {
-                errorBox.style.display = "block";
-            }
+        <button class="btn btn-secondary" onclick="showAlert('Use email or phone signup')">
+            <span class="btn-icon">📧</span> Use email or phone
+        </button>
+
+        <button class="btn btn-secondary" onclick="showAlert('Continue with Google')">
+            <span class="btn-icon">G</span> Continue with Google
+        </button>
+
+        <button class="btn btn-secondary" onclick="showAlert('Continue with Facebook')">
+            <span class="btn-icon">f</span> Continue with Facebook
+        </button>
+    </div>
+
+    <!-- Log In Form -->
+    <div class="form" id="login">
+        <h1>Sign In</h1>
+        <p class="subtitle">Access your portfolio account</p>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button class="btn btn-primary" onclick="login()">Sign In</button>
+        <div id="error">❌ Incorrect username or password!</div>
+    </div>
+</div>
+
+<script>
+    // Switch between Sign Up / Log In tabs
+    function switchTab(tabName, element) {
+        // Update tabs
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        element.classList.add('active');
+
+        // Update forms
+        document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+    }
+
+    // Simple alert function
+    function showAlert(text) {
+        alert(text);
+    }
+
+    // Login function
+    function login() {
+        const user = document.getElementById("username").value.trim();
+        const pass = document.getElementById("password").value;
+        const errorBox = document.getElementById("error");
+
+        if (user === "john" && pass === "1234") {
+            alert("✅ Login Successful! Redirecting...");
+            window.location.href = "profilejohn.html";
         }
-    </script>
+        else if (user === "nicole" && pass === "1234") {
+            alert("✅ Login Successful! Redirecting...");
+            window.location.href = "profilenicole.html";
+        }
+        else {
+            errorBox.style.display = "block";
+        }
+    }
+</script>
 
 </body>
 </html>
