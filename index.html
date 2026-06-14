@@ -3,77 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Login</title>
+    <title>Netflix - Sign In</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
         body {
+            /* Removed the broken external link, used solid black + gradient overlay instead */
             background: #000;
+            position: relative;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
-        .login-box {
-            background: #1a1a1a;
-            padding: 35px;
-            border-radius: 8px;
+
+        /* Dark gradient overlay like Netflix */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 380px;
-            text-align: center;
-            border: 1px solid #333;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+            z-index: 1;
         }
-        h2 {
+
+        /* Official Netflix logo style */
+        .logo {
+            position: absolute;
+            top: 25px;
+            left: 30px;
             color: #e50914;
-            margin-bottom: 25px;
-            font-size: 28px;
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            z-index: 2;
+            text-decoration: none;
         }
+
+        .login-box {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 60px 68px 40px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .login-box h1 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
         input {
             width: 100%;
-            padding: 14px;
-            margin: 10px 0;
+            padding: 16px 20px;
+            margin-bottom: 16px;
             border: none;
             border-radius: 4px;
             background: #333;
             color: #fff;
-            font-size: 16px;
+            font-size: 1rem;
         }
+
         input:focus {
             outline: none;
             background: #444;
-            border-bottom: 2px solid #e50914;
+            box-shadow: 0 0 0 2px #e50914;
         }
+
+        input::placeholder {
+            color: #b3b3b3;
+        }
+
         button {
             width: 100%;
             padding: 14px;
-            margin-top: 15px;
+            margin: 24px 0 12px;
             background: #e50914;
             color: #fff;
             border: none;
             border-radius: 4px;
-            font-size: 17px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.2s;
         }
+
         button:hover {
             background: #f40612;
         }
+
+        .help-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #b3b3b3;
+        }
+
+        .help-row a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        .help-row a:hover {
+            text-decoration: underline;
+        }
+
         #error {
-            color: #ff5555;
+            color: #e87c03;
             margin-top: 15px;
             display: none;
-            font-size: 15px;
+            font-size: 0.95rem;
+            padding: 8px 0;
         }
     </style>
 </head>
 <body>
+
+    <!-- Netflix Logo -->
+    <div class="logo">NETFLIX</div>
+
     <div class="login-box">
-        <h2>MY PORTFOLIO</h2>
-        <input type="text" id="username" placeholder="Enter Username">
-        <input type="password" id="password" placeholder="Enter Password">
+        <h1>Sign In</h1>
+        <input type="text" id="username" placeholder="Email or phone number">
+        <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Sign In</button>
-        <div id="error">❌ Incorrect username or password!</div>
+        <div class="help-row">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Need help?</a>
+        </div>
+        <div id="error">❌ Incorrect username or password. Please try again.</div>
     </div>
 
     <script>
@@ -82,27 +153,20 @@
             const pass = document.getElementById("password").value;
             const errorBox = document.getElementById("error");
 
-            // ✅ JOHN'S LOGIN
+            // ✅ Your working login details
             if (user === "john" && pass === "1234") {
-                alert("✅ Login Successful! Redirecting to John's Profile...");
-                localStorage.setItem("loggedin", "true");
-                // Correct path: profilejohn.html
+                alert("✅ Signing in...");
                 window.location.href = "profilejohn.html";
             }
-
-            // ✅ NICOLE'S LOGIN
             else if (user === "nicole" && pass === "1234") {
-                alert("✅ Login Successful! Redirecting to Nicole's Profile...");
-                localStorage.setItem("loggedin", "true");
-                // Correct path: profilenicole.html
+                alert("✅ Signing in...");
                 window.location.href = "profilenicole.html";
             }
-
-            // ❌ Wrong details
             else {
                 errorBox.style.display = "block";
             }
         }
     </script>
+
 </body>
 </html>
